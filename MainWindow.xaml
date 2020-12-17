@@ -1,0 +1,22 @@
+﻿<Window x:Class="CheckIt.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CheckIt"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical">
+            <Label Content="Put your link"></Label>
+            <TextBox x:Name="urlBox" Text="https://getcheckcheck.com/en/check-request/316680"></TextBox>
+            <Button Content="Parse It" Width="50" Margin="10" Click="DoWork"></Button>
+            <Button Content="Clear buffer" Click="Clear"></Button>
+        </StackPanel>
+        <TextBox Grid.Row="1" TextWrapping="Wrap" Text="{Binding Path=Buffer, Mode=OneWay}"></TextBox>
+    </Grid>
+</Window>
